@@ -3,15 +3,17 @@ body {
     background-color: #f0f0f0;
     margin: 0;
     padding: 0;
+    padding-top: 60px; /* 确保顶栏不遮挡内容 */
 }
 
 .header-container {
-    background-color: #0078d7;
-    color: #ffffff;
+    background-color: rgba(0, 120, 215, 0.7); /* 使用rgba设置带透明度的颜色 */
+    color: #000000; /* 黑色文本 */
     padding: 20px;
     text-align: center;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    position: fixed; /* 固定在页面顶部 */
+    width: 100%;
+    backdrop-filter: blur(10px); /* 添加毛玻璃效果 */
 }
 
 .about-me, .skills, .projects {
@@ -29,4 +31,8 @@ body {
     padding: 10px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+}
+
+.blue-title {
+    color: #0078d7; /* 蓝色标题 */
 }
