@@ -10,6 +10,8 @@ body {
     color: #ffffff;
     padding: 20px;
     text-align: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 .about-me, .skills, .projects {
@@ -17,6 +19,7 @@ body {
     padding: 20px;
     background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
 }
 
 .footer {
@@ -24,7 +27,6 @@ body {
     color: #ffffff;
     text-align: center;
     padding: 10px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
