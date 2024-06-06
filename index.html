@@ -1,128 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>xiaozhao45</title>
-
-    <meta name="Description" content="Home Page of xiaozhao45">
-    <meta name="color-scheme" content="dark light">
-    <link rel="stylesheet" type="text/css" href="css/html.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
-</head>
-
-<body>
-    <div class="wing">
-        <h1 class="animate-slide-in-down">xiaozhao45</h1>
-        <div class="quote">
-            <span class="quote-line quote-line-start animate-slide-in-left"></span>
-            <span class="quote-icon quote-icon-start animate-slide-in-down">
-                <i class="icon icon-quotes-left"></i>
-            </span>
-            <p class="quote-content animate-slide-in-down">祸福无不自己求之者。</p>
-            <p class="quote-author animate-slide-in-down">—— <em>《孟子》</em></p>
-            <span class="quote-icon quote-icon-end animate-slide-in-up">
-                <i class="icon icon-quotes-right"></i>
-            </span>
-            <span class="quote-line quote-line-end animate-slide-in-right"></span>
-        </div>
-        <div class="links">
-            <a href="https://github.com/xiaozhao45/" class="animate-slide-in-down">GitHub</a>
-        </div>
-        <div class="location">
-            <span class="location-icon animate-slide-in-up">
-                <i class="icon icon-map-pin"></i>
-            </span>
-            <span class="location-text animate-slide-in-down">Now · HeBei - China</span>
-        </div>
-    </div>
-
-    <div class="copyright">
-        <span class="copyright0 copyright-text  animate-slide-in-down">
-            &copy; 2023 - 2024
-            <a href="http://github.com/xiaozhao45/" target="_blank">WingYYD/</a>. xiaozhao45 丨
-            <a href="http://github.io/" target="_blank" rel="nofollow">Github Page</a>
-        </span>
-        <br>
-        <span class="copyright1 copyright-text  animate-slide-in-down">
-            &copy; 2024
-            <a href="http://github.com/xiaozhao45/" target="_blank">xiaozhao45</a>
-            <br>
-            <a href="http://github.io/" target="_blank" rel="nofollow">GitHub Page</a>
-        </span>
-    </div>
-</body>
-<script src="vendors/jquery-3.3.1.min.js"></script>
-<script src="assets/vendors/jquery-3.3.1.min.js"></script>
+<meta charset="UTF-8">
+<title>自动跳转提示</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding-top: 100px;
+    }
+    .message {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 20px;
+    }
+    a:hover {
+        background-color: #0056b3;
+    }
+</style>
 <script>
-    $(function () {
-        var SLIDE_IN_DOWN = { opacity: 1, top: 0 };
-        var SLIDE_IN_UP = { opacity: 1, bottom: 0 };
-        var SLIDE_IN_LEFT = { left: 0 };
-        var SLIDE_IN_RIGHT = { right: 0 };
-
-        executeAnimations();
-
-        function executeAnimations() {
-            $.when()
-                .then(animateTitle)
-                .then(animateQuote)
-                .then(animateLinks)
-                .then(animateLocation)
-                .then(animateCopyright);
-        }
-
-        function animateTitle() {
-            return animate('h1', SLIDE_IN_DOWN);
-        }
-
-        function animateQuote() {
-            return $.when(
-                animate('.quote-line-start', SLIDE_IN_LEFT),
-                animate('.quote-line-end', SLIDE_IN_RIGHT),
-                animate('.quote-icon-start', SLIDE_IN_DOWN),
-                animate('.quote-icon-end', SLIDE_IN_UP)
-            )
-                .then(function () {
-                    return animate('.quote-content', SLIDE_IN_DOWN);
-                })
-                .then(function () {
-                    return animate('.quote-author', SLIDE_IN_DOWN);
-                });
-        }
-
-        function animateLinks() {
-            var DELAY_STEP = 200;
-            var elements = $('.links a');
-            var concurrent = $.makeArray(elements)
-                .map(function (element, index) {
-                    return animate(element, SLIDE_IN_DOWN, index * DELAY_STEP);
-                });
-
-            return $.when.apply($, concurrent);
-        }
-
-        function animateLocation() {
-            return $.when(
-                animate('.location-icon', SLIDE_IN_UP),
-                animate('.location-text', SLIDE_IN_DOWN)
-            );
-        }
-        function animateCopyright() {
-            return $.when(
-                animate('.copyright-text', SLIDE_IN_DOWN)
-            );
-        }
-
-        function animate(selector, properties, delay, options) {
-            delay = delay || 0;
-            return $(selector).delay(delay)
-                .animate(properties, options)
-                .promise();
-        }
-
-    });
+    window.onload = function() {
+        var countdown = 3;
+        var countdownElement = document.getElementById('countdown');
+        var redirectLink = 'http://xiaozhao45.000.pe';
+        
+        var countdownInterval = setInterval(function() {
+            countdown--;
+            countdownElement.textContent = countdown + '秒后将跳转至我的博客网站';
+            countdownElement.nextElementSibling.textContent = countdown + ' seconds to redirect to my blog';
+            if (countdown <= 0) {
+                clearInterval(countdownInterval);
+                window.location.href = redirectLink;
+            }
+        }, 1000);
+    };
 </script>
-
+</head>
+<body>
+    <div class="message" id="countdown">3秒后将跳转至我的博客网站</div>
+    <div class="message">3 seconds to redirect to my blog</div>
+    <a href="http://xiaozhao45.000.pe" target="_blank">立即跳转至我的博客</a>
+    <a href="http://xiaozhao45.000.pe" target="_blank">Jump to my blog now</a>
+</body>
 </html>
