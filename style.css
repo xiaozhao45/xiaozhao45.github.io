@@ -1,0 +1,112 @@
+/* ai-chat-style.css - 简约灰度风格AI聊天模板 */
+:root {
+    --bg-color: #f8f9fa;
+    --text-color: #212529;
+    --border-color: #dee2e6;
+    --accent-color: #6c757d;
+    --thinking-bg: #e9ecef;
+    --speech-bg: #ffffff;
+    --metadata-bg: #e9ecef;
+    --shadow-color: rgba(0,0,0,0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #212529;
+        --text-color: #f8f9fa;
+        --border-color: #495057;
+        --accent-color: #adb5bd;
+        --thinking-bg: #343a40;
+        --speech-bg: #2b3035;
+        --metadata-bg: #343a40;
+        --shadow-color: rgba(0,0,0,0.2);
+    }
+}
+
+body {
+    font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.thinking-container {
+    background-color: var(--thinking-bg);
+    border-left: 4px solid var(--accent-color);
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    transition: all 0.3s;
+}
+
+.action-text {
+    font-weight: bold;
+    color: var(--accent-color);
+    margin: 15px 0;
+    padding-left: 10px;
+    opacity: 0.8;
+}
+
+.speech {
+    background-color: var(--speech-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin: 20px 0;
+    position: relative;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    transition: all 0.3s;
+}
+
+.speech:before {
+    content: """;
+    font-size: 40px;
+    color: var(--border-color);
+    position: absolute;
+    left: 10px;
+    top: -10px;
+    opacity: 0.5;
+}
+
+.metadata {
+    background-color: var(--metadata-bg);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 25px;
+    font-size: 0.9em;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.metadata-section {
+    margin-bottom: 12px;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+}
+
+.metadata-title {
+    font-weight: bold;
+    color: var(--accent-color);
+    width: 80px;
+    flex-shrink: 0;
+}
+
+.metadata-content {
+    flex-grow: 1;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border-color), transparent);
+    margin: 25px 0;
+    opacity: 0.5;
+}
