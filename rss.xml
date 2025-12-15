@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>xiaozhao45&apos;s Blog</title><description>♪Welcome to my world♪</description><link>https://xiaozhao45-blog.pages.dev/</link><language>zh_CN</language><item><title>AI的使用体验一叙</title><link>https://xiaozhao45-blog.pages.dev/posts/ai_experience/</link><guid isPermaLink="true">https://xiaozhao45-blog.pages.dev/posts/ai_experience/</guid><description>从Gemini、GPT到DeepSeek，记录我作为重度用户对主流AI模型的真实体验与冷思考。</description><pubDate>Mon, 15 Dec 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;:::tip
+这个文章本应在2025-11-15发布，然而我却为网站的小bug修复和学业而没有公开，同时我修正了其中的一些内容。
+:::&lt;/p&gt;
+&lt;h2&gt;前言&lt;/h2&gt;
+&lt;p&gt;我使用AI的阶段大概有三个。&lt;/p&gt;
+&lt;p&gt;其一，在2025年初之前，也就是在DeepSeek R1发布前，我常常使用的是GPT 3.5、Qwen、文心一言等主要的ai。顺带一提，2024年:spoiler[ &lt;s&gt;貌似还要早一点？&lt;/s&gt;]通义千问和文心一言的内测权限我全部都拿到了，体验过最古早的版本，对比现在的AI来看莫过于极差，也没有什么对比的必要罢了。&lt;/p&gt;
+&lt;p&gt;其二，在2025年初之后，DeepSeek R1很惊人，当时还体验过许多天的服务器繁忙。不过只几天后我便注意到了DeepSeek R1的缺点——幻觉现象严重。玩到深处时，无论如何塞入提示，输出中各种量子物理学也能席卷而来了。后续DeepSeek R1更新了几个小版本，DeepSeek R1被DeepSeek V3.X替代，我还是蛮觉得可惜。&lt;/p&gt;
+&lt;p&gt;其三，现在我最常用的是Google Gemini，很强很强，&lt;s&gt;Google也很放得开限额&lt;/s&gt;，只是Google Gemini的API在前几个月（大概是7、8、9月）出现了不可用，我们称之为“哈气”。&lt;/p&gt;
+&lt;p&gt;:::warning
+Google现在已经猛砍API免费额度了。
+:::&lt;/p&gt;
+&lt;p&gt;:::note[何为“哈气”？]
+讲解这个很有意思，Google Gemini 2.5 Pro在贴吧等论坛被称为哈基米 2.5 Pro，因为API的输出截断、报错频繁，对应于猫咪“哈气”，也就是猫咪发出“嘶——”的声音，并伴随张嘴、露齿、身体弓起的姿态。&lt;/p&gt;
+&lt;p&gt;总之便是我们的戏称罢了。
+:::&lt;/p&gt;
+&lt;p&gt;而今，&lt;s&gt;Google Gemini 3系列发布在即&lt;/s&gt;Google Gemini 3已经发布，同其他模型断崖式领先！只能说Google这位Transformer的“爹”还是太强了。&lt;/p&gt;
+&lt;h1&gt;Gemini 使用体验&lt;/h1&gt;
+&lt;h2&gt;降智问题&lt;/h2&gt;
+&lt;p&gt;Google Gemini的能力虽强，但官方“下手”也毫不手软。Gemini 2.5 Pro刚发布时表现惊艳，但后续版本疑似经过了大幅“量化”或调整，性能上有明显的“降智”感。&lt;/p&gt;
+&lt;h2&gt;训练数据过期&lt;/h2&gt;
+&lt;p&gt;:::tip
+这个问题已经修复了，Google将2.5的训练数据的截止日期提升到了2025一月份左右。
+:::&lt;/p&gt;
+&lt;p&gt;Google Gemini在编码上很强，但是训练数据不很新，Google为Gemini支持的搜索功能也不如GPT好用，除了接入其他搜索服务，可以说又回到了GPT 3.5没联网的时光了。&lt;/p&gt;
+&lt;h2&gt;输出问题&lt;/h2&gt;
+&lt;p&gt;一个最大的缺点就是Google Gemini的输出会有些问题。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;格式遵循不佳&lt;/strong&gt;：在角色扮演、格式遵循等场景，Gemini会时不时带有“-”符号、非中文语言、输出训练数据、循环输出。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;消极模型偏见&lt;/strong&gt;：在正常使用时，一旦Gemini没有完成你的任务，你批评它，他便诚恳的道歉，当批评的次数多时，它就会自暴自弃！至于骂它它也会叫好。这是一种极端的消极模型偏见，即使是提示词也需要花费很大力气才能抵消，或者使用替罪羊策略。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;自我更正失调&lt;/strong&gt;：Gemini在使用时会出现重复片段然后更正、在自己说出错误的内容后惊觉并更改。我认为这是“用力过猛”，Gemini在正常输出时不知为什么就是会概率性的出错误，错误后Gemini会意识到，如果不是自然语言对话则会直接重新输出一遍正确的内容，即使会打乱格式；如果是自然语言对话，Gemini会用“等等！我又犯错误了！”之类的话挽救，这和先前直接输出错误的AI相比之，它能意识到一些错误。但仔细想象，这些错误既然能够意识到，那么这是错误吗？即模型本身能够输出正确的，而真正的错误模型是不会意识到的。这相比而言是否是一个退步？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;:::note[例子]
+关于第二点，我分享这个对话以支撑，事实上我还有很多这样的对话，不过我找不到了。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221GYUGUPRZM6NrhJEtC-YWzo_i3Z4gbkui%22%5D,%22action%22:%22open%22,%22userId%22:%22102083816419231511657%22,%22resourceKeys%22:%7B%7D%7D&amp;amp;usp=sharing&quot;&gt;Google AI Studio&lt;/a&gt;
+:::&lt;/p&gt;
+&lt;h2&gt;Gemini 3.0 使用体验&lt;/h2&gt;
+&lt;p&gt;顶级，绝对的顶级！&lt;/p&gt;
+&lt;p&gt;真的非常推荐所有人都去试一试，3.0 Pro在Google AI Studio有免费额度。如果说我从DeepSeek到Gemini 2.5 Pro的提升是1的话，那么从Gemini 2.5 Pro到Gemini 3.0 Pro的提升至少也是0.5。&lt;/p&gt;
+&lt;h1&gt;Qwen 使用体验&lt;/h1&gt;
+&lt;h2&gt;语言理解差&lt;/h2&gt;
+&lt;p&gt;这一点很直观，我所体验的Qwen 3模型有这样的问题。当然，这可能不是一个很重大的问题，因为我使用AI总是期盼AI能够命中我提示词的所意图的意义，而Qwen 3在这方面很差。&lt;/p&gt;
+&lt;p&gt;这意味着你需要更多的提示词才能表达完备意思。&lt;/p&gt;
+&lt;p&gt;不过我也分不清这究竟是AI不合我的胃口还是AI本就无能。&lt;/p&gt;
+&lt;h2&gt;中平问题&lt;/h2&gt;
+&lt;p&gt;作为C端用户，Qwen模型实在是没有什么突出的优点以支持我去使用，若说它免费，它不如Google Gemini、DeepSeek，Google Gemini的移动应用完全免费使用Gemini 2.5 Flash，API也有免费额度；若说它性能好，我认为DeepSeek的性能在日常使用中是好过Qwen的，当然不是看benchmark，而是我在使用中得到的结果。&lt;/p&gt;
+&lt;p&gt;:::tip[C端用户的意思]
+“C端用户”是中文互联网和商业领域常用的一个术语，其中的 “C” 是英文 Consumer（消费者）的缩写。因此C端用户 = 消费者用户 = 个人用户。
+:::&lt;/p&gt;
+&lt;p&gt;面对个人来讲，它还是太中平、普通了。面对需要开源模型的公司等商业用户，也有DeepSeek、GPT-OSS等更多模型，Qwen很中平。&lt;/p&gt;
+&lt;h2&gt;官方应用体验割裂&lt;/h2&gt;
+&lt;p&gt;首先，Qwen是Qwen，通义千问是通义千问。很抽象对吗？&lt;/p&gt;
+&lt;p&gt;实际上Qwen的正宗在&lt;a href=&quot;https://chat.qwen.ai/&quot;&gt;Qwen.Ai&lt;/a&gt;，而通义千问在&lt;a href=&quot;https://www.tongyi.com/&quot;&gt;Tonyi.Com&lt;/a&gt;，两者是不同的网站，对应不同的用户需求，前者是开发者等使用，后者是普通用户。&lt;/p&gt;
+&lt;p&gt;问题出这两者的维护团队貌似不同，面对&lt;a href=&quot;https://www.tongyi.com/&quot;&gt;Tonyi.Com&lt;/a&gt;，更多用户在通义这个软件中，而这个软件...主打的是AI办公、智能体、情感陪伴。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://chat.qwen.ai/&quot;&gt;Qwen.Ai&lt;/a&gt;也有自己的软件，不过是对国外开放，只能在Google Play搜到客户端，更简洁。&lt;/p&gt;
+&lt;p&gt;两个应用都没有对方的身影，事实上若不是偶然搜到，我还不知道有&lt;a href=&quot;https://chat.qwen.ai/&quot;&gt;Qwen.Ai&lt;/a&gt;这个网站。&lt;/p&gt;
+&lt;h1&gt;GPT 使用体验&lt;/h1&gt;
+&lt;p&gt;&lt;s&gt;GPT 5是目前最强的模型。毋庸置疑。&lt;/s&gt;&lt;/p&gt;
+&lt;p&gt;现在最强的模型是&lt;a href=&quot;https://deepmind.google/models/gemini/pro/&quot;&gt;Gemini 3.0 Pro&lt;/a&gt;了。&lt;/p&gt;
+&lt;p&gt;我对GPT的使用较少，但有些问题是用过一次就能体现的。&lt;/p&gt;
+&lt;h2&gt;主观能动性过强&lt;/h2&gt;
+&lt;p&gt;GPT 5在使用时会不停的问你——“需不需要我帮你XX？”，即使说你已经在第一个提示词中给出了指令，GPT 5还是会这样问你，这样会带来的问题是GPT 5白费了额度，有时你需要两个提示才能解决一个问题。&lt;/p&gt;
+&lt;p&gt;GPT 5所提供的帮助也大多不够智能和符合场景，我认为更多是一种模型偏见。&lt;/p&gt;
+&lt;h1&gt;DeepSeek使用体验&lt;/h1&gt;
+&lt;p&gt;&lt;s&gt;DeepSeek近期很安静&lt;/s&gt;发布了DeepSeek V3.2，&lt;s&gt;DeepSeek也早已不是最强大的AI&lt;/s&gt;现在看来，超过了GPT-5 High，仅次于Gemini 2.5 Pro，有人认为DeepSeek在先前是最强的，但我们要正视。&lt;/p&gt;
+&lt;p&gt;首先OpenAI的o1系列模型才是最早出现模型本身具有思维链，也就是深度思考功能的模型。&lt;/p&gt;
+&lt;h2&gt;不要硬吹DeepSeek&lt;/h2&gt;
+&lt;p&gt;计算每个测试项上性能得分的比率，然后取这些比率的几何平均数（Geometric Mean）。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;公式：$ \text{比率} = \frac{\text{DeepSeek R1 得分} }{\text{OpenAI o1-1217 得分 }} $&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Benchmark (Metric)&lt;/th&gt;
+&lt;th&gt;OpenAI o1-1217 (A)&lt;/th&gt;
+&lt;th&gt;DeepSeek R1 (B)&lt;/th&gt;
+&lt;th&gt;性能比率 (k = B / A)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;MMLU (Pass@1)&lt;/td&gt;
+&lt;td&gt;91.8&lt;/td&gt;
+&lt;td&gt;90.8&lt;/td&gt;
+&lt;td&gt;0.9891&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DROP (3-shot F1)&lt;/td&gt;
+&lt;td&gt;90.2&lt;/td&gt;
+&lt;td&gt;92.2&lt;/td&gt;
+&lt;td&gt;1.0222&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GPQA Diamond (Pass@1)&lt;/td&gt;
+&lt;td&gt;75.7&lt;/td&gt;
+&lt;td&gt;71.5&lt;/td&gt;
+&lt;td&gt;0.9445&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SimpleQA (Correct)&lt;/td&gt;
+&lt;td&gt;47.0&lt;/td&gt;
+&lt;td&gt;30.1&lt;/td&gt;
+&lt;td&gt;0.6404&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;LiveCodeBench (Pass@1-COT)&lt;/td&gt;
+&lt;td&gt;63.4&lt;/td&gt;
+&lt;td&gt;65.9&lt;/td&gt;
+&lt;td&gt;1.0394&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Codeforces (Percentile)&lt;/td&gt;
+&lt;td&gt;96.6&lt;/td&gt;
+&lt;td&gt;96.3&lt;/td&gt;
+&lt;td&gt;0.9969&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Codeforces (Rating)&lt;/td&gt;
+&lt;td&gt;2061&lt;/td&gt;
+&lt;td&gt;2029&lt;/td&gt;
+&lt;td&gt;0.9845&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SWE Verified (Resolved)&lt;/td&gt;
+&lt;td&gt;48.9&lt;/td&gt;
+&lt;td&gt;49.2&lt;/td&gt;
+&lt;td&gt;1.0061&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Aider-Polyglot (Acc.)&lt;/td&gt;
+&lt;td&gt;61.7&lt;/td&gt;
+&lt;td&gt;53.3&lt;/td&gt;
+&lt;td&gt;0.8639&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AIME 2024 (Pass@1)&lt;/td&gt;
+&lt;td&gt;79.2&lt;/td&gt;
+&lt;td&gt;79.8&lt;/td&gt;
+&lt;td&gt;1.0076&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MATH-500 (Pass@1)&lt;/td&gt;
+&lt;td&gt;96.4&lt;/td&gt;
+&lt;td&gt;97.3&lt;/td&gt;
+&lt;td&gt;1.0093&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;:::note
+这个表格取自论文&lt;a href=&quot;https://arxiv.org/abs/2501.12948&quot;&gt;ArXiv&lt;/a&gt;的3.1. DeepSeek-R1 Evaluation。只保留了两者皆有的数据。
+:::&lt;/p&gt;
+&lt;p&gt;计算所有比率的几何平均数得到$k ≈ 0.939$。&lt;/p&gt;
+&lt;p&gt;综合这11个基准测试的表现，DeepSeek R1 的整体性能大约是 OpenAI o1-1217 性能的 93.9%。&lt;/p&gt;
+&lt;p&gt;差距非常小，但是后续很快，OpenAI就出了新模型，步步高升，直到现在的GPT 5，&lt;s&gt;而DeepSeek也不再领先&lt;/s&gt;。&lt;/p&gt;
+&lt;h2&gt;DeepSeek真正值得吹的&lt;/h2&gt;
+&lt;p&gt;我不是在贬低DeepSeek，每当看到有人说DeepSeek如何如何强，吹得天花乱坠的人，我很无奈。&lt;/p&gt;
+&lt;p&gt;因为真正顶尖的模型是普通大陆用户无法常规使用的。&lt;/p&gt;
+&lt;p&gt;DeepSeek是有优点的，DeepSeek最大的优点就是——让人们花小钱就能用到好的模型（的确，官方API冲了十块余额能玩几M的Token）、激活了市场和技术活力。&lt;/p&gt;
+&lt;h1&gt;后记&lt;/h1&gt;
+&lt;p&gt;现在面对我来讲，我的一些麻烦工作在有AI协助后效率直线上升，AI真的很有用。&lt;/p&gt;
+&lt;p&gt;但我也常思考对AI的依赖所带来后果。&lt;/p&gt;
+&lt;p&gt;最明显的就是AI具有模型偏好，会有幻觉。也就是AI会骗你。这在严肃的场景（譬如法律）是绝不应允的！&lt;/p&gt;
+&lt;p&gt;人们都说AI是科技革命，但我想AI还很任重道远。&lt;/p&gt;
+</content:encoded></item><item><title>Android 16 原生终端体验</title><link>https://xiaozhao45-blog.pages.dev/posts/new_android_xvi_terminal_experience/</link><guid isPermaLink="true">https://xiaozhao45-blog.pages.dev/posts/new_android_xvi_terminal_experience/</guid><description>总结：夯</description><pubDate>Sat, 15 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;p&gt;昨天在鼓捣我的备用机，想要运行一个完备的Linux环境时，偶然在小红薯上看到了HyperOS 3的Linux终端功能，刚刚好我的设备是MTK，支持这个功能:spoiler[&lt;s&gt;Qualcomm还不支持哩！&lt;/s&gt;]，果真列在我的开发者选项中。&lt;/p&gt;
+&lt;p&gt;据说支持GPU加速，可以跑桌面环境。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;支持GPU加速！&lt;/h1&gt;
+&lt;p&gt;如图，&lt;code&gt;/dev/dri&lt;/code&gt;目录下有东西！！&lt;/p&gt;
+&lt;h2&gt;运行&lt;code&gt;systemctl&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;我尝试运行&lt;code&gt;systemctl&lt;/code&gt;，成功了！&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;~ $ ssh xiaozhao45@0.0.0.0 -p 2222
+xiaozhao45@0.0.0.0&apos;s password: 
+Linux localhost 6.1.0-34-avf-arm64 #1 SMP Debian 6.1.135-1 (2025-04-25) aarch64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Sat Nov 15 06:40:51 2025 from 127.0.0.1
+xiaozhao45@localhost:~$ systemctl
+  UNIT                                                                                              LOAD   ACTIVE SUB       DESCRIP&amp;gt;
+  proc-sys-fs-binfmt_misc.automount                                                                 loaded active running   Arbitra&amp;gt;
+  sys-devices-platform-2e000000.pci-pci0000:00-0000:00:02.0-virtio1-virtio\x2dports-vport1p0.device loaded active plugged   /sys/de&amp;gt;
+  sys-devices-platform-2e000000.pci-pci0000:00-0000:00:03.0-virtio2-virtio\x2dports-vport2p0.device loaded active plugged   /sys/de&amp;gt;
+  sys-devices-platform-2e000000.pci-pci0000:00-0000:00:04.0-virtio3-virtio\x2dports-vport3p0.device loaded active plugged   /sys/de&amp;gt;
+  sys-devices-platform-2e000000.pci-pci0000:00-0000:00:05.0-virtio4-block-vda-vda1.device           loaded active plugged   /sys/de&amp;gt;
+  sys-devices-platform-2e000000.pci-pci0000:00-0000:00:05.0-virtio4-block-vda-vda2.device           loaded active plugged   /sys/de&amp;gt;
+  sys-devices-platform-2e000000.pci-pci0000:00-0000:00:05.0-virtio4-block-vda.device                loaded active plugged   /sys/de&amp;gt;
+  sys-devices-platform-2e000000.pci-pci0000:00-0000:00:07.0-virtio6-net-enp0s7.device               loaded active plugged   Virtio &amp;gt;
+  sys-devices-platform-2e8.U6_16550A-tty-ttyS3.device                                               loaded active plugged   /sys/de&amp;gt;
+  sys-devices-platform-2f8.U6_16550A-tty-ttyS1.device                                               loaded active plugged   /sys/de&amp;gt;
+  sys-devices-platform-3e8.U6_16550A-tty-ttyS2.device                                               loaded active plugged   /sys/de&amp;gt;
+  sys-devices-platform-3f8.U6_16550A-tty-ttyS0.device                                               loaded active plugged   /sys/de&amp;gt;
+  sys-devices-virtual-block-zram0.device                                                            loaded active plugged   /sys/de&amp;gt;
+  sys-devices-virtual-tty-hvc0.device                                                               loaded active plugged   /sys/de&amp;gt;
+  sys-devices-virtual-tty-hvc1.device                                                               loaded active plugged   /sys/de&amp;gt;
+  sys-devices-virtual-tty-hvc2.device                                                               loaded active plugged   /sys/de&amp;gt;
+  sys-devices-virtual-tty-hvc3.device                                                               loaded active plugged   /sys/de&amp;gt;
+  sys-devices-virtual-tty-hvc4.device                                                               loaded active plugged   /sys/de&amp;gt;
+  sys-devices-virtual-tty-hvc5.device                                                               loaded active plugged   /sys/de&amp;gt;
+  sys-devices-virtual-tty-hvc6.device                                                               loaded active plugged   /sys/de&amp;gt;
+  sys-devices-virtual-tty-hvc7.device                                                               loaded active plugged   /sys/de&amp;gt;
+  sys-module-configfs.device                                                                        loaded active plugged   /sys/mo&amp;gt;
+  sys-module-fuse.device                                                                            loaded active plugged   /sys/mo&amp;gt;
+  sys-subsystem-net-devices-enp0s7.device                                                           loaded active plugged   Virtio &amp;gt;
+  -.mount                                                                                           loaded active mounted   Root Mo&amp;gt;
+  dev-hugepages.mount                                                                               loaded active mounted   Huge Pa&amp;gt;
+  dev-mqueue.mount                                                                                  loaded active mounted   POSIX M&amp;gt;
+  mnt-internal.mount                                                                                loaded active mounted   /mnt/in&amp;gt;
+  mnt-shared.mount                                                                                  loaded active mounted   /mnt/sh&amp;gt;
+  opt-kernel_extras.mount                                                                           loaded active mounted   /opt/ke&amp;gt;
+  proc-sys-fs-binfmt_misc.mount                                                                     loaded active mounted   Arbitra&amp;gt;
+  run-credentials-systemd\x2dsysctl.service.mount                                                   loaded active mounted   /run/cr&amp;gt;
+  run-credentials-systemd\x2dsysusers.service.mount                                                 loaded active mounted   /run/cr&amp;gt;
+  run-credentials-systemd\x2dtmpfiles\x2dsetup.service.mount                                        loaded active mounted   /run/cr&amp;gt;
+  run-credentials-systemd\x2dtmpfiles\x2dsetup\x2ddev.service.mount                                 loaded active mounted   /run/cr&amp;gt;
+  run-user-0.mount                                                                                  loaded active mounted   /run/us&amp;gt;
+  run-user-1000.mount                                                                               loaded active mounted   /run/us&amp;gt;
+  run-user-1001.mount                                                                               loaded active mounted   /run/us&amp;gt;
+  sys-fs-fuse-connections.mount                                                                     loaded active mounted   FUSE Co&amp;gt;
+  sys-kernel-config.mount                                                                           loaded active mounted   Kernel &amp;gt;
+  sys-kernel-debug-tracing.mount                                                                    loaded active mounted   /sys/ke&amp;gt;
+xiaozhao45@localhost:~$ 
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;跑Podman&lt;/h2&gt;
+&lt;p&gt;我尝试跑了一下Podman。可以直接用&lt;code&gt;apt&lt;/code&gt;安装。&lt;/p&gt;
+&lt;p&gt;:::note[Podman是什么？]
+Podman 是一款由 Red Hat 开发的开源、无守护进程的 Linux 容器引擎，用于创建、运行和管理 OCI 兼容的容器和容器镜像。它作为 Docker 的直接替代品，提供了与 Docker 命令高度兼容的 CLI，但其采用无守护进程架构且默认以非 root 用户运行，从而提升了安全性和灵活性。
+:::&lt;/p&gt;
+&lt;p&gt;:::tip[总结]
+类似Docker，在同时提供Podman和Docker的发行版中，能正常运行Podman就意味着Docker也应该能正常工作。
+:::&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;xiaozhao45@localhost:~$ podman exec -it suse /bin/bash
+root@51b9e53a3177:/# neofetch
+         JJJJJJJJ                            root@51b9e53a3177 
+      JJJJJJJJJJJJJJ                         ----------------- 
+    JJJJJJ   =JJJJJJJ                        OS: openSUSE Tumbleweed aarch64 
+   JJJJ      =JJJ JJJJ                       Kernel: 6.1.0-34-avf-arm64 
+   JJJ       =JJJ   JJJ                      Uptime: 35 mins 
+  JJJJ       =JJJ   JJJ                      Packages: 241 (rpm) 
+  JJJJJJJJJJJJJJJ   JJJJ                     Shell: bash 5.3.3 
+   JJJJJJJJJJJJJJ   JJJJ                     Resolution: 1280x1024 
+   JJJJ             JJJJ                     Terminal: gtk-cursor-theme-name 
+    JJJJJ=          JJJJ                     CPU: ARM Cortex-A725 (8) 
+      JJJJJJJJJJJJJJJJJJJJJJJJJJJJJ=         Memory: 0.44 GiB / 3.83 GiB (11%) 
+        =JJJJJJJJJJJJJJJJJJJJJJJJJJJJJ
+                    JJJJ         =JJJJJJ                             
+                    JJJJ            =JJJJ                            
+                    JJJJ   JJJJJJJJJJJJJJ
+                    JJJJ   JJJJJJJJJJJJJJJ
+                    JJJJ   JJJJ       JJJJ
+                     JJJ   JJJJ       JJJ
+                     JJJJJ JJJJ      JJJJ
+                      =JJJJJJJJ   JJJJJJ
+                        JJJJJJJJJJJJJJ
+                           JJJJJJJ=
+
+root@51b9e53a3177:/# 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这意味着我们终于不再拘泥于PRoot、Chroot这类不完整或是需要root权限的容器了，不过...&lt;/p&gt;
+&lt;h1&gt;缺点&lt;/h1&gt;
+&lt;h2&gt;支持的SoC少&lt;/h2&gt;
+&lt;p&gt;只支持MTK等SoC，甚至新的骁龙 8 Elite Gen 5 也不支持。&lt;/p&gt;
+&lt;h2&gt;磁盘空间分配不灵活&lt;/h2&gt;
+&lt;p&gt;这个很重要，这就像你只能创建一个立即分配空间的虚拟机。&lt;/p&gt;
+&lt;p&gt;这意味着在里面调整磁盘大小时，这个终端程序会直接“吃掉”这部分。&lt;/p&gt;
+&lt;p&gt;&amp;lt;div style=&quot;display:flex;gap:20px&quot;&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;img src=&quot;https://github.com/xiaozhao45/Images/blob/main/SS2.jpg?raw=true&quot; style=&quot;height:400px&quot;&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;img src=&quot;https://github.com/xiaozhao45/Images/blob/main/SS3.jpg?raw=true&quot; style=&quot;height:400px&quot;&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&amp;lt;center&amp;gt;一秒就装了个原神（bushi）。&amp;lt;/center&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;ssh不支持外部连接&lt;/h2&gt;
+&lt;p&gt;在我的使用中，我可以用Termux运行&lt;code&gt;ssh username@0.0.0.0 -p &amp;lt;port&amp;gt;&lt;/code&gt;来连接这个系统，但是我在我的电脑、备用机上无论如何也无法连接，设置中的端口控制已经放行了2222，也就是我的自定义ssh端口。最终还是用termux开ssh，再连接。总之麻烦极了。&lt;/p&gt;
+&lt;h1&gt;总之&lt;/h1&gt;
+&lt;p&gt;总之，我看了看我的备用机，即使也是MTK、也是Android 16，但不支持这项功能，而我的主力机再容不下这个不能动态磁盘空间占用的系统。&lt;/p&gt;
+&lt;p&gt;我先前摆弄过好一阵的Termux和内核编译，目的也是跑个完整的Linux。从PRoot、Chroot到编译内核，最完备的就是本文所讲的终端，不过有些瑕疵罢了，我也不会在我的主力机上给它分配多少空间。&lt;/p&gt;
+&lt;p&gt;:::note
+考虑过使用NFS连到我的备用机或者云盘，再在云上跑Podman，不过这有些鸡肋了，断网就废。
+:::&lt;/p&gt;
+&lt;p&gt;目前来看，这个功能更多是用来跑一个桌面环境、扩展生态，这对没有电脑的人很有帮助，未来也可能会像WSL一样发展，还是很未来可期的。&lt;/p&gt;
+</content:encoded></item><item><title>你好世界！</title><link>https://xiaozhao45-blog.pages.dev/posts/helloworld/</link><guid isPermaLink="true">https://xiaozhao45-blog.pages.dev/posts/helloworld/</guid><pubDate>Thu, 13 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;你好世界！&lt;/p&gt;
+&lt;p&gt;这是我的首篇文章，我再没有什么要说的了。&lt;/p&gt;
+</content:encoded></item></channel></rss>
